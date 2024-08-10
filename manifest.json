@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "NetSuite consultant Toolbox",
+  "version": "0.1.0",
+  "description": "A helpful toolbox for NetSuite consultants",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.app.netsuite.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.app.netsuite.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["settings.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
